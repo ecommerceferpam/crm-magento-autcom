@@ -1,0 +1,26 @@
+{
+  "poll_seconds": 120,
+  "modules": {
+    "pedidos_cpf": {
+      "enabled": true,
+      "min_value": 2000.0
+    },
+    "pedidos_cnpj": {
+      "enabled": true,
+      "min_value": 0.0
+    },
+    "palavras_chave": {
+      "enabled": true,
+      "min_value": 0.0,
+      "keywords": [
+        "stihl",
+        "sthil",
+        "stil"
+      ]
+    },
+    "carrinhos_abandonados": {
+      "enabled": true,
+      "min_value": 500.0
+    }
+  }
+}
