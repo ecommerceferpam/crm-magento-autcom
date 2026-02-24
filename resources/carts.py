@@ -93,7 +93,7 @@ def listar_carrinhos_abandonados() -> Dict[str, Any]:
                 updated_at=updated_at,
                 now_utc=to_dt_utc,
                 items=items,
-                minutos=10,
+                minutos=60,
                 email=email):
 
                 updated_dt_utc = parse_utc_str(updated_at)
