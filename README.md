@@ -1,0 +1,1 @@
+Projeto para automatizar a abertura de crms para pedidos específicos e carrinhos abandonados.
