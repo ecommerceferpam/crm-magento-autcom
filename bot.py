@@ -113,7 +113,8 @@ def main() -> None:
                                 continue
 
                             items = c.get("items") or []
-                            abrir_crm_carrinho(items=items, valor=valor, email=email, data=data_hoje)
+                            phone = (c.get("phone") or None)
+                            abrir_crm_carrinho(items=items, valor=valor, email=email, phone=phone, data=data_hoje)
 
                         except Exception as e:
                             db.registrar_erro(

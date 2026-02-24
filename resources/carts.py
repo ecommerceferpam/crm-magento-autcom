@@ -86,7 +86,9 @@ def listar_carrinhos_abandonados() -> Dict[str, Any]:
             updated_at = c.get("updated_at")  # string UTC
             items = c.get("items")
             email = ((c.get("customer") or {}).get("email"))
-
+            addresses = (c.get("customer") or {}).get("addresses") or []
+            phone = addresses[0].get("telephone", "") if addresses else ""
+            
             if esta_abandonado(
                 updated_at=updated_at,
                 now_utc=to_dt_utc,
@@ -99,6 +101,7 @@ def listar_carrinhos_abandonados() -> Dict[str, Any]:
                 abandonados.append({
                     "cart_id": c.get("cart_id"),
                     "email": email,
+                    "phone": phone,
                     "updated_at_utc": updated_at,
                     "updated_at_utc3": fmt_utc3(updated_dt_utc),
                     "valor_total": c.get("valor_total"),

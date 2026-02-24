@@ -106,7 +106,7 @@ def abrir_crm(pedido: Dict[str, Any], codigo_cliente: str, cpf_cnpj: str, pedido
         return None
 
 # carts.py ----------------------------------------------------------
-def abrir_crm_carrinho(items, valor, email: str, data: str) -> Optional[Dict[str, Any]]:
+def abrir_crm_carrinho(items, valor, email: str, phone: Optional[str], data: str) -> Optional[Dict[str, Any]]:
     """
     Envia a ocorrência no CRM e, se der certo, registra no DB de envios.
     Se der erro, registra no DB de erros.
@@ -126,7 +126,7 @@ def abrir_crm_carrinho(items, valor, email: str, data: str) -> Optional[Dict[str
         itens_no_carrinho_txt = "; ".join(itens_no_carrinho)
 
         descricao = (
-            f"O cliente de email {email} abandonou um carrinho de R$ {valor} com os seguinte itens:"
+            f"Cliente Email: {email} {f'Telefone: {phone} ' if phone else ''}abandonou um carrinho de R$ {valor} com os seguintes itens:"
             f"{itens_no_carrinho_txt}"
         )
 
