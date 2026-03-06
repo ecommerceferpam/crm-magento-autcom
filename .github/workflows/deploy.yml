@@ -1,0 +1,16 @@
+name: Deploy CRM Streamlit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Executar deploy no servidor
+        shell: powershell
+        run: |
+          powershell -ExecutionPolicy Bypass -File C:\apps\crm\deploy.ps1
