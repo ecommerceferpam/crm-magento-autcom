@@ -179,7 +179,7 @@ def tail_file(path: Path, max_lines: int = 200) -> str:
 
 # ======== UI ========
 
-st.set_page_config(page_title="Bot Magento CRM", layout="wide")
+st.set_page_config(page_title="CRM E-COMMERCE", layout="wide")
 status = bot_status()
 interval_ms = 1000 if status["running"] else 5000 # refresh dinâmico: mais rápido quando o bot está rodando
 
@@ -203,7 +203,7 @@ st.markdown("""
 left, right = st.columns([1.2, 1], vertical_alignment="center")
 
 with left:
-    st.markdown("## Bot Magento ➡ CRM")
+    st.markdown("## CRM E-COMMERCE")
     if status["running"]:
         st.caption(f"🟢 Rodando (PID {status['pid']})")
     else:
